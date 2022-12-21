@@ -1,0 +1,24 @@
+﻿@page
+@model RazorOduncTakip.Pages.OduncTakip.CreateModel
+@{
+    ViewData["Title"] = DateTime.Now.ToString("yyyy-MM-dd-hh-mm-s");
+}
+<div class="container">
+    <div class="w-25">
+        <form method="post">
+            <div class="my-2">
+                <label class="form-label" asp-for="@Model.OduncIslem.Name"></label>
+                <select class="form-control" asp-for="@Model.OduncIslem.Name" asp-items="@Model.Items" ></select>
+            </div>
+            <div class="">
+                <label class="form-label" asp-for="@Model.OduncIslem.DateGive"></label>
+                <input class="form-control" asp-for="@Model.OduncIslem.DateGive" value="@DateTime.Today.ToString("yyyy-MM-dd")" />
+             <div class="my-2 text-end">
+                <input class="btn btn-primary" type="submit" value="Kayıt Ekle" />
+             </div>
+             <div class="container" asp-validation-summary="All">
+             </div>
+            </div>
+        </form>
+    </div>
+</div>
